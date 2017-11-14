@@ -52,11 +52,13 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-      return moveForwards()
-@app.route('/q')
-def stopEngine():
-      return stopMotors()
+      moveForwards()
+      return 'Moving'
 
+@app.route('/stop')
+def stopEngine():
+      stopMotors()
+      return "<h1 style'color: red'>Stopping ...... </h1>"
 
 
 app.run()
