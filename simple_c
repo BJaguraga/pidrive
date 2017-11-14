@@ -1,0 +1,7 @@
+#iclude<stdio.h>
+
+int main(){
+   printf("Well, Hello")
+   return 0;
+}
+
