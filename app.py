@@ -63,7 +63,7 @@ def index():
 def stopEngine():
       stopMotors()
       return "<h1 style'color: red'>Stopping ...... </h1>"
-@app.route('/>')
+@app.route('/r')
 def moveRight():
      Right()
      return 'Moving to the right'
