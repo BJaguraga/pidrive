@@ -48,10 +48,10 @@ def stopMotors():
 	pwmLb.ChangeDutyCycle(stop)
 	pwmRb.ChangeDutyCycle(stop)
 def Right():
-    pwmMotorAForwards.ChangeDutyCycle(DutyCycleA)
-    pwmMotorABackwards.ChangeDutyCycle(Stop)
-    pwmMotorBForwards.ChangeDutyCycle(Stop)
-    pwmMotorBBackwards.ChangeDutyCycle(DutyCycleB)
+        pwmMotorAForwards.ChangeDutyCycle(DutyCycleA)
+        pwmMotorABackwards.ChangeDutyCycle(Stop)
+        pwmMotorBForwards.ChangeDutyCycle(Stop)
+        pwmMotorBBackwards.ChangeDutyCycle(DutyCycleB)
 app = Flask(__name__)
 
 @app.route('/')
@@ -65,8 +65,8 @@ def stopEngine():
       return "<h1 style'color: red'>Stopping ...... </h1>"
 @app.route('/>')
 def moveRight():
-     moveRight()
-    return 'Moving to the right'
+     Right()
+     return 'Moving to the right'
 
 
 app.run()
