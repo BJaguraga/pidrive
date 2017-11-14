@@ -7,8 +7,8 @@ GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
 
 stop = 0
-dutyCycleA = 55
-dutyCycleB  = 35
+DutyCycleA = 55
+DutyCycleB  = 35
 freq = 50
 pinTrigger = 17
 pinEcho = 18
@@ -37,8 +37,8 @@ pwmRf.start(stop)
 
 
 def moveForwards():
-	pwmLf.ChangeDutyCycle(dutyCycleB)
-	pwmRf.ChangeDutyCycle(dutyCycleA)
+	pwmLf.ChangeDutyCycle(DutyCycleB)
+	pwmRf.ChangeDutyCycle(DutyCycleA)
 	pwmLb.ChangeDutyCycle(stop)
 	pwmRb.ChangeDutyCycle(stop)
 
@@ -47,7 +47,11 @@ def stopMotors():
 	pwmRf.ChangeDutyCycle(stop)
 	pwmLb.ChangeDutyCycle(stop)
 	pwmRb.ChangeDutyCycle(stop)
-
+def Right():
+    pwmMotorAForwards.ChangeDutyCycle(DutyCycleA)
+    pwmMotorABackwards.ChangeDutyCycle(Stop)
+    pwmMotorBForwards.ChangeDutyCycle(Stop)
+    pwmMotorBBackwards.ChangeDutyCycle(DutyCycleB)
 app = Flask(__name__)
 
 @app.route('/')
@@ -59,6 +63,10 @@ def index():
 def stopEngine():
       stopMotors()
       return "<h1 style'color: red'>Stopping ...... </h1>"
+@app.route('/>')
+def moveRight():
+     moveRight()
+    return 'Moving to the right'
 
 
 app.run()
