@@ -1,1 +1,105 @@
-hello
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	<script>
+	        $(document).ready(function(){
+	        aler('loaded')
+	 });
+	  
+	function sendIt(to){
+		$.get(to, {msg: 'hello'})
+	
+	}
+	 
+	</script>
+	
+<style>
+     #top, #t, #b{
+     background:green;
+     color: white;
+     width: 100%;
+     font-size: 30px
+     
+}
+ #left{
+     color: white;
+     float: left;
+     width:40%;
+     height: 4%
+
+}
+ #right{
+     float: right;
+     color: white;
+     width:40%;
+    
+
+
+}
+#r,#l{
+   background:black;
+   color: white;
+   font-size: 50px
+}
+ #bottom{
+     color: white;
+      width: 100%;
+      margin-top: 12%
+     
+
+}
+#stop{
+     width: 5%;
+     float: right;
+     margin-right: 12%;
+     text-align: center
+     
+   
+}
+
+ #stp{
+     background: red;
+     color: white;
+     font-size: 50px;
+     margin-right: 12%
+
+}
+.results{
+background: lightblue;
+width: 50%;
+height: 50%;
+font-size:50px;
+
+
+}
+</style>
+</head>
+<body>
+
+<div data-role="page">
+  <div data-role="header">
+  <h1>piDrive</h1>
+  </div>
+<script>
+  
+</script>
+  <div data-role="main" class="ui-content">
+       <form>
+       <div id='top'> <button id='t' onClick='sendIt("/move")'>∆</button></div>   <br>
+       <div id='top-bot-cont'>
+       		<span id='right'> <button id='r' onClick='sendIt("/right")'>></button> </span>
+       		  <span id='stop'><button id='stp' onClick='sendIt("/stop")'>•</button> </span>
+     			<span id='left'><button id='l' onClick='sendIt("/left")'><</button> </span>
+       </div>
+   
+      <div id='bottom'><button id='b' onClick='sendIt("/back")'>v</button></div>
+  </div>
+  <div class='results'></div>
+        </form>
+</div>
+</body>
+</html>
